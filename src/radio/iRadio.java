@@ -1,44 +1,46 @@
 /**
- * Encabezado
+ * Radio de carro con funciones de encendido, apagado, cambio de emisora y seleccion de frecuencias favoritas 
+ * 17/01/2019
  */
 package radio;
 
 /**
  *
- * @author Gerardo
+ * @author Gerardo Méndez
  */
 
 public interface iRadio {
+    /**
+     * @return regresa la nueva frecuencia seleccionada 
+     */
+    boolean cambiarAmFm();
+    
     /**
      * @param onoff indica si el radio esta encendido o apagado
      */
     void encendidoRadio(boolean onoff);
     
-    /**
-     * @param frecuencia la frecuencia actual del radio 
-     * @param emisora la emisora actual del radio 
+    /** 
+     * @param emisora la emisora actual del radio (AM o FM) 
      * @return nueva frecuencia a reproducir
      */
-    double subirFrecuencia(double frecuencia, String emisora);
+    double subirFrecuencia(String emisora);
     
     /**
-     * @param frecuencia la frecuencia actual del radio 
-     * @param emisora la emisora actual del radio 
+     * @param emisora la emisora actual del radio (AM o FM)
      * @return nueva frecuencia a reproducir
      */
-    double bajarFrecuencia(double frecuencia, String emisora);
+    double bajarFrecuencia(String emisora);
     
     /**
-     * @param frecuencia la frecuencia actual del radio 
-     * @param emisora la emisora actual del radio 
+     * @param frecuencia la frecuencia actual del radio  
      * @param posicion numero del boton en donde se guardara la frecuencia
      */
-    void setFavorito(double frecuencia, String emisora, int posicion);
+    void setFavorito(double frecuencia, int posicion);
     
     /**
-     * @param emisora la frecuencia actual del radio 
      * @param posicion numero del boton en donde se encuentra almacenada la frecuencia 
      * @return frecuencia almacenada
      */
-    double getFavorito(String emisora, int posicion);
+    double getFavorito(int posicion);
 }

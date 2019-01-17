@@ -51,19 +51,6 @@ public class RADIOTest {
 
     /**
      * Test of precio method, of class RADIO.
+     * @Test
      */
-    @Test
-    public void testPrecio() {
-        System.out.println("precio");
-        double preciox = 300.0;
-        RADIO instance = new RADIO();
-        double expResult = 399.0;
-        double result = instance.precio(preciox);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        if(result != expResult){
-            fail("The test case is a prototype.");
-        }
-    }
-    
 }
