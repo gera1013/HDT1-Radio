@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase myRadio para el radio de carro con los metodos definidos para las funciones de 
+ * encendido, apagado, cambio de emisora, cambio de frecuencia y seleccion de frecuencias favoritas.
+ * Se le agrega al objeto un array, con la funcionalidad de almacenar las frecuencias favoritas.
+ * 17/01/2019
  */
 package radio;
 
@@ -14,6 +15,11 @@ public class myRadio implements iRadio{
     public double fmFrecuencia = 87.90;
     public String Emisora = "FM";
     double favs[] = new double[12];
+    
+    public myRadio(){
+        favs[2] = 90.5;
+        favs[6] = 970;
+    }
     
     @Override
     public double subirFrecuencia(){
@@ -57,7 +63,7 @@ public class myRadio implements iRadio{
     
     @Override
     public double getFavorito(int posicion){
-        int nuevaPos = 0;
+        int nuevaPos = posicion;
         nuevaPos = nuevaPos - 1;
         double frecuencia = favs[nuevaPos];
         return frecuencia;
@@ -65,13 +71,16 @@ public class myRadio implements iRadio{
 
     @Override
     public boolean cambiarAmFm() {
+        boolean emisora = true;
         if(Emisora.equalsIgnoreCase("AM")){
             Emisora = "FM";
+            emisora = true;
         }
         else if(Emisora.equalsIgnoreCase("FM")){
             Emisora = "AM";
+            emisora = false;
         }
-        throw new UnsupportedOperationException("Not supported yet.");
+        return emisora;
     }
 
     //@Override
@@ -81,7 +90,7 @@ public class myRadio implements iRadio{
 
     @Override
     public void setFavorito(double frecuencia, int posicion) {
-        int nuevaPos = 0;
+        int nuevaPos = posicion;
         nuevaPos = nuevaPos - 1;
         favs[nuevaPos] = frecuencia;
     }

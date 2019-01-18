@@ -1,11 +1,12 @@
- /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase RADIO que contiene el main para la simulacion.
+ * Se inicia un objecto de tipo myRadio, clase que implementa la interfaz iRadio
+ * 17/01/2019
  */
 package radio;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -17,14 +18,24 @@ public class RADIO {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        double emisoraActual = 87.9;
+        DecimalFormat df2 = new DecimalFormat(".##");
+        String emisora = "FM";
+        double emisoraActual = 0;
+        double FM = 87.9;
+        double AM = 530;
         Scanner scan = new Scanner(System.in);
         System.out.println("Presiona caulquier tecla para encender el radio");
         String intro = scan.next();
         boolean On = true;
-        myRadio Radio = new myRadio();
+        iRadio Radio = new myRadio();
         while(On){
-            System.out.println("Ahora escuchas " + emisoraActual + " " + Radio.Emisora);
+            if(emisora.equals("FM")){
+                emisoraActual = FM;
+            }
+            else if(emisora.equals("AM")){
+                emisoraActual = AM;
+            }
+            System.out.println("Ahora escuchas " + df2.format(emisoraActual) + " " + emisora);
             System.out.println("");
             System.out.println("PRESIONA 1 para adelantar frecuencia");
             System.out.println("PRESIONA 2 para retroceder frecuencia");
@@ -48,21 +59,35 @@ public class RADIO {
             }
             switch(eleccion){
                 case 1:
-                    emisoraActual = Radio.subirFrecuencia();
+                    if(emisora.equals("FM")){
+                        FM = Radio.subirFrecuencia();
+                    }
+                    else if(emisora.equals("AM")){
+                        AM = Radio.subirFrecuencia();
+                    }
                     System.out.println("");
                     System.out.println("Cambiando a nueva emisora...");
                     System.out.println("");
                 break;
                 
                 case 2:
-                    emisoraActual = Radio.bajarFrecuencia();
+                    if(emisora.equals("FM")){
+                        FM = Radio.bajarFrecuencia();
+                    }
+                    else if(emisora.equals("AM")){
+                        AM = Radio.bajarFrecuencia();
+                    }
                     System.out.println("");
                     System.out.println("Cambiando a nueva emisora...");
                     System.out.println("");
                 break;
                 
                 case 3:
-                    Radio.cambiarAmFm();
+                    if(Radio.cambiarAmFm()){
+                        emisora = "FM";
+                    } else{
+                        emisora = "AM";
+                    }
                     System.out.println("");
                 break;
                 
@@ -87,6 +112,7 @@ public class RADIO {
                     System.out.println("Apagando radio...");
                     System.out.println("");
                     System.out.close();
+                    On = false;
             }
         }
     }

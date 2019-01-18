@@ -38,7 +38,8 @@ public class myRadioTest {
     }
 
     /**
-     * Test of subirFrecuencia method, of class myRadio.
+     * Test para el metodo subirFrecuencia
+     * Prueba si el avance de frecuencia funciona de manera correcta
      */
     @Test
     public void testSubirFrecuencia() {
@@ -47,12 +48,11 @@ public class myRadioTest {
         double expResult = 88.10000000000001;
         double result = instance.subirFrecuencia();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        System.out.println(expResult + " " + result);
     }
 
     /**
-     * Test of bajarFrecuencia method, of class myRadio.
+     * Test para el metodo bajarFrecuencia
+     * Prueba si el retroceso de frecuencia funciona de manera correcta
      */
     @Test
     public void testBajarFrecuencia() {
@@ -61,27 +61,24 @@ public class myRadioTest {
         double expResult = 107.9;
         double result = instance.bajarFrecuencia();
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        System.out.println(expResult + " " + result);
     }
 
     /**
-     * Test of getFavorito method, of class myRadio.
+     * Test para getFavorito 
+     * Prueba si las emisoras almacenadas en el array son extraidas de manera correcta
      */
     @Test
     public void testGetFavorito() {
         System.out.println("getFavorito");
-        int posicion = 0;
+        int boton = 3;
         myRadio instance = new myRadio();
-        double expResult = 0.0;
-        double result = instance.getFavorito(posicion);
+        double expResult = 90.5;
+        double result = instance.getFavorito(boton);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
-     * Test of cambiarAmFm method, of class myRadio.
+     * Test para el metodo cambiarAmFm 
      */
     @Test
     public void testCambiarAmFm() {
@@ -90,22 +87,6 @@ public class myRadioTest {
         boolean expResult = false;
         boolean result = instance.cambiarAmFm();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setFavorito method, of class myRadio.
-     */
-    @Test
-    public void testSetFavorito() {
-        System.out.println("setFavorito");
-        double frecuencia = 0.0;
-        int posicion = 0;
-        myRadio instance = new myRadio();
-        instance.setFavorito(frecuencia, posicion);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

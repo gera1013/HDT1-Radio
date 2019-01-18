@@ -1,5 +1,6 @@
 /**
- * Radio de carro con funciones de encendido, apagado, cambio de emisora y seleccion de frecuencias favoritas 
+ * Interfaz iRadio para el radio de carro con metodos sin definir
+ * encendido, apagado, cambio de emisora, cambio de frecuencia y seleccion de frecuencias favoritas 
  * 17/01/2019
  */
 package radio;
@@ -18,7 +19,7 @@ public interface iRadio {
     /**
      * @param onoff indica si el radio esta encendido o apagado
      */
-    //void encendidoRadio(boolean onoff);
+    //booelan encendidoRadio(boolean onoff);
     
     /** 
      * @return nueva frecuencia a reproducir
@@ -40,10 +41,5 @@ public interface iRadio {
      * @param posicion numero del boton en donde se encuentra almacenada la frecuencia 
      * @return frecuencia almacenada
      */
-    double getFavorito(int posicion);
-    
-    /**
-     * 
-     */
-    
+    double getFavorito(int posicion);    
 }
