@@ -18,19 +18,17 @@ public interface iRadio {
     /**
      * @param onoff indica si el radio esta encendido o apagado
      */
-    void encendidoRadio(boolean onoff);
+    //void encendidoRadio(boolean onoff);
     
     /** 
-     * @param emisora la emisora actual del radio (AM o FM) 
      * @return nueva frecuencia a reproducir
      */
-    double subirFrecuencia(String emisora);
+    double subirFrecuencia();
     
     /**
-     * @param emisora la emisora actual del radio (AM o FM)
      * @return nueva frecuencia a reproducir
      */
-    double bajarFrecuencia(String emisora);
+    double bajarFrecuencia();
     
     /**
      * @param frecuencia la frecuencia actual del radio  
@@ -43,4 +41,9 @@ public interface iRadio {
      * @return frecuencia almacenada
      */
     double getFavorito(int posicion);
+    
+    /**
+     * 
+     */
+    
 }
