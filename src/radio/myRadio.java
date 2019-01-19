@@ -11,19 +11,26 @@ package radio;
  * @author Gerardo
  */
 public class myRadio implements iRadio{
-    public double amFrecuencia = 530;
-    public double fmFrecuencia = 87.90;
-    public String Emisora = "FM";
-    double favs[] = new double[12];
+    private double amFrecuencia;
+    private double fmFrecuencia;
+    private String Emisora;
+    private boolean OnOff;
+    double[] favsFM;
+    double[] favsAM;
     
     public myRadio(){
-        favs[2] = 90.5;
-        favs[6] = 970;
+        Emisora = "FM";
+        amFrecuencia = 510;
+        fmFrecuencia = 87.9;
+        OnOff = false;
+        favsFM = new double[]{87.9, 87.9, 87.9, 87.9, 87.9, 87.9, 
+            87.9, 87.9, 87.9, 87.9, 87.9, 87.9,};
+        favsAM = new double[]{510, 510, 510, 510, 510, 510, 510,
+            510, 510, 510, 510, 510,};
     }
     
     @Override
     public double subirFrecuencia(){
-        double nuevaEmisora = 0;
         if(Emisora.equalsIgnoreCase("AM")){
             amFrecuencia = amFrecuencia + 10;
             if(amFrecuencia > 1610){
@@ -38,12 +45,11 @@ public class myRadio implements iRadio{
             }
             return fmFrecuencia;
         }
-        return nuevaEmisora;
+        return 0;
     }
     
     @Override
     public double bajarFrecuencia(){
-        double nuevaEmisora = 0;
         if(Emisora.equalsIgnoreCase("AM")){
             amFrecuencia = amFrecuencia - 10;
             if(amFrecuencia < 530){
@@ -58,15 +64,23 @@ public class myRadio implements iRadio{
             }
             return fmFrecuencia;
         }
-        return nuevaEmisora;
+        return 0;
     }
     
     @Override
     public double getFavorito(int posicion){
-        int nuevaPos = posicion;
-        nuevaPos = nuevaPos - 1;
-        double frecuencia = favs[nuevaPos];
-        return frecuencia;
+        int pos = posicion;
+        double frecuencia;
+        pos = pos - 1;
+        if(Emisora.equalsIgnoreCase("AM")){
+            frecuencia = favsAM[pos];
+            return frecuencia;
+        }
+        else if(Emisora.equalsIgnoreCase("FM")){
+            frecuencia = favsFM[pos];
+            return frecuencia;
+        }
+        return 0;
     }
 
     @Override
@@ -83,15 +97,21 @@ public class myRadio implements iRadio{
         return emisora;
     }
 
-    //@Override
-    //public void encendidoRadio(boolean onoff) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
+    @Override
+    public boolean encendidoRadio() {
+        OnOff = !OnOff;
+        return OnOff;
+    }
 
     @Override
     public void setFavorito(double frecuencia, int posicion) {
-        int nuevaPos = posicion;
-        nuevaPos = nuevaPos - 1;
-        favs[nuevaPos] = frecuencia;
+        int pos = posicion;
+        pos = pos - 1;
+        if(Emisora.equalsIgnoreCase("AM")){
+            favsAM[pos] = frecuencia;
+        }
+        else if(Emisora.equalsIgnoreCase("FM")){
+            favsFM[pos] = frecuencia;
+        }
     }
 }
