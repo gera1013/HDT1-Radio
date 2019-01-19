@@ -17,9 +17,9 @@ public interface iRadio {
     boolean cambiarAmFm();
     
     /**
-     * @param onoff indica si el radio esta encendido o apagado
+     * @return regresa el estado del radio (encendido o apagado)
      */
-    //booelan encendidoRadio(boolean onoff);
+    boolean encendidoRadio();
     
     /** 
      * @return nueva frecuencia a reproducir
