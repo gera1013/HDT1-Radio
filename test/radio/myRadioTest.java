@@ -14,7 +14,8 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Gerardo
+ * @author Gerardo Mendez
+ * @author Luis Pedro Cuellar
  */
 public class myRadioTest {
     
