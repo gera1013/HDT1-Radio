@@ -20,13 +20,13 @@ public class myRadio implements iRadio{
     
     public myRadio(){
         Emisora = "FM";
-        amFrecuencia = 510;
+        amFrecuencia = 530;
         fmFrecuencia = 87.9;
         OnOff = false;
         favsFM = new double[]{87.9, 87.9, 87.9, 87.9, 87.9, 87.9, 
             87.9, 87.9, 87.9, 87.9, 87.9, 87.9,};
-        favsAM = new double[]{510, 510, 510, 510, 510, 510, 510,
-            510, 510, 510, 510, 510,};
+        favsAM = new double[]{530, 530, 530, 530, 530, 530, 530,
+            530, 530, 530, 530, 530};
     }
     
     @Override
