@@ -14,7 +14,7 @@ public class myRadio implements iRadio{
     public double amFrecuencia = 530;
     public double fmFrecuencia = 87.90;
     public String Emisora = "FM";
-    double favs[] = new double[12];
+    private double favs[] = new double[12];
     
     public myRadio(){
         favs[2] = 90.5;
