@@ -8,6 +8,7 @@ package radio;
 /**
  *
  * @author Gerardo Méndez
+ * @author Luis Pedro Cuellar
  */
 
 public interface iRadio {
