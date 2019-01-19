@@ -8,7 +8,8 @@ package radio;
 
 /**
  *
- * @author Gerardo
+ * @author Gerardo Mendez
+ * @author Luis Pedro Cuellar
  */
 public class myRadio implements iRadio{
     private double amFrecuencia;
