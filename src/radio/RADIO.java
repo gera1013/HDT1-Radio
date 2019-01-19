@@ -22,7 +22,7 @@ public class RADIO {
         String emisora = "FM";
         double emisoraActual = 0;
         double FM = 87.9;
-        double AM = 510;
+        double AM = 530;
         int eleccion = 10;
         boolean OnOff;
         Scanner scan = new Scanner(System.in);
@@ -124,6 +124,8 @@ public class RADIO {
                     break;
                 }
             }
+            System.out.println("RADIO OFF --- Menu de apagado");
+            System.out.println("");
             System.out.println("Presiona 0 para salir");
             System.out.println("Presiona 1 para encender el radio");
             eleccion = 12;
