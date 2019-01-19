@@ -19,6 +19,9 @@ public class myRadio implements iRadio{
     double[] favsFM;
     double[] favsAM;
     
+    /** 
+     * Se define el valor de los atributos
+    */
     public myRadio(){
         Emisora = "FM";
         amFrecuencia = 530;
@@ -30,6 +33,10 @@ public class myRadio implements iRadio{
             530, 530, 530, 530, 530};
     }
     
+    /**
+     * Adelanta la frecuencia, dependiendo si la emisora es AM o FM
+     * @return regresa la nueva frecuencia 
+     */
     @Override
     public double subirFrecuencia(){
         if(Emisora.equalsIgnoreCase("AM")){
@@ -49,6 +56,10 @@ public class myRadio implements iRadio{
         return 0;
     }
     
+    /**
+     * Retrocede la frecuencia, dependiendo si la emisora es AM o FM
+     * @return nueva frecuencia
+     */
     @Override
     public double bajarFrecuencia(){
         if(Emisora.equalsIgnoreCase("AM")){
@@ -68,6 +79,11 @@ public class myRadio implements iRadio{
         return 0;
     }
     
+    /**
+     * Seleccionar una frecuencia almacenada
+     * @param posicion numero de boton que el usuario pide
+     * @return frecuencia almacenada en posicion requerida
+     */
     @Override
     public double getFavorito(int posicion){
         int pos = posicion;
@@ -84,6 +100,10 @@ public class myRadio implements iRadio{
         return 0;
     }
 
+    /**
+     * Cambia de emisora
+     * @return true para FM o false para AM
+     */
     @Override
     public boolean cambiarAmFm() {
         boolean emisora = true;
@@ -98,6 +118,10 @@ public class myRadio implements iRadio{
         return emisora;
     }
 
+    /**
+     * 
+     * @return estado actual del radio
+     */
     @Override
     public boolean encendidoRadio() {
         OnOff = !OnOff;
